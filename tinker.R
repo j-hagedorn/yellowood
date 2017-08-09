@@ -1,8 +1,11 @@
 library(ahp); library(yaml)
 
-RunGUI()
-vacay <- Load("vacation.ahp")
-Analyze(vacay)
+schools <- ahp::Load("schools.ahp")
+Calculate(schools)
+Visualize(schools)
+Analyze(schools)
+AnalyzeTable(schools)
+AnalyzeTable(schools, decisionMaker = "Dad")
+AnalyzeTable(schools, decisionMaker = "Mom")
+AnalyzeTable(schools, decisionMaker = "Isaac")
 
-iris <- as.yaml(iris)
-yaml.load_file("vacation.ahp")

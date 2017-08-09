@@ -1,0 +1,152 @@
+Version: 2.0
+Alternatives: &alternatives
+    GRCHS:
+        description: alternative 1
+    Sacred Heart:
+        description: alternative 2
+    Potters House:
+        description: alternative 3
+Goal:
+    name: Choose where Isaac will attend high school
+    decision-makers:
+        - Dad: 0.45
+        - Mom: 0.45
+        - Isaac: 0.1
+    preferences:
+        Dad:
+            pairwise:
+                # Option 1  |------------------| Option 2
+                # 9         |------ 4.56 ------| 0.1111111
+                - [Educational Depth, Christian, 4]
+                - [Culture, Educational Depth, 4]
+                - [Culture, Christian, 6]
+                - [Sports, Educational Depth, 0.1]
+                - [Sports, Culture, 0.1]
+                - [Sports, Christian, 0.1]
+                - [Costs, Educational Depth, 2]
+                - [Costs, Christian, 2]
+                - [Costs, Culture, 2]
+                - [Costs, Sports, 9]
+        Mom:
+            pairwise:
+                # Option 1  |------------------| Option 2
+                # 9         |------ 4.56 ------| 0.1111111
+                - [Educational Depth, Christian, 4.5]
+                - [Culture, Educational Depth, 4.5]
+                - [Culture, Christian, 4.5]
+                - [Sports, Educational Depth, 4.5]
+                - [Sports, Culture, 4.5]
+                - [Sports, Christian, 4.5]
+                - [Costs, Educational Depth, 4.5]
+                - [Costs, Christian, 4.5]
+                - [Costs, Culture, 4.5]
+                - [Costs, Sports, 4.5]
+
+        Isaac:
+            pairwise:
+                # Option 1  |------------------| Option 2
+                # 9         |------ 4.56 ------| 0.1111111
+                - [Educational Depth, Christian, 4.5]
+                - [Culture, Educational Depth, 4.5]
+                - [Culture, Christian, 4.5]
+                - [Sports, Educational Depth, 4.5]
+                - [Sports, Culture, 4.5]
+                - [Sports, Christian, 4.5]
+                - [Costs, Educational Depth, 4.5]
+                - [Costs, Christian, 4.5]
+                - [Costs, Culture, 4.5]
+                - [Costs, Sports, 4.5]
+
+    children:
+        Educational Depth: 
+            preferences:
+                Dad:
+                  pairwise:
+                  # Option 1  |------------------| Option 2
+                  # 9         |------ 4.56 ------| 0.1111111
+                  - [GRCHS, Sacred Heart, 2.5]
+                  - [GRCHS, Potters House, 4.5]
+                  - [Sacred Heart, Potters House, 4.5]
+                Mom:
+                  pairwise:
+                  - [GRCHS, Sacred Heart, 4.5]
+                  - [GRCHS, Potters House, 4.5]
+                  - [Sacred Heart, Potters House, 4.5]
+                Isaac:
+                  pairwise:
+                    - [GRCHS, Sacred Heart, 4.5]
+                    - [GRCHS, Potters House, 4.5]
+                    - [Sacred Heart, Potters House, 4.5]
+            children: *alternatives
+        Christian: 
+            preferences:
+                Dad:
+                    pairwise:
+                        - [GRCHS, Sacred Heart, 1]
+                        - [GRCHS, Potters House, 4.5]
+                        - [Sacred Heart, Potters House, 4.5]
+                Mom:
+                    pairwise:
+                        - [GRCHS, Sacred Heart, 4.5]
+                        - [GRCHS, Potters House, 4.5]
+                        - [Sacred Heart, Potters House, 4.5]
+                Isaac:
+                    pairwise:
+                        - [GRCHS, Sacred Heart, 4.5]
+                        - [GRCHS, Potters House, 4.5]
+                        - [Sacred Heart, Potters House, 4.5]
+            children: *alternatives
+        Culture: 
+            preferences:
+                Dad:
+                    pairwise:
+                        - [GRCHS, Sacred Heart, 1]
+                        - [GRCHS, Potters House, 4.5]
+                        - [Sacred Heart, Potters House, 4.5]
+                Mom:
+                    pairwise:
+                        - [GRCHS, Sacred Heart, 4.5]
+                        - [GRCHS, Potters House, 4.5]
+                        - [Sacred Heart, Potters House, 4.5]
+                Isaac:
+                    pairwise:
+                        - [GRCHS, Sacred Heart, 4.5]
+                        - [GRCHS, Potters House, 4.5]
+                        - [Sacred Heart, Potters House, 4.5]
+            children: *alternatives
+        Sports: 
+            preferences:
+                Dad:
+                    pairwise:
+                        - [GRCHS, Sacred Heart, 6]
+                        - [GRCHS, Potters House, 4.5]
+                        - [Sacred Heart, Potters House, 4.5]
+                Mom:
+                    pairwise:
+                        - [GRCHS, Sacred Heart, 4.5]
+                        - [GRCHS, Potters House, 4.5]
+                        - [Sacred Heart, Potters House, 4.5]
+                Isaac:
+                    pairwise:
+                        - [GRCHS, Sacred Heart, 4.5]
+                        - [GRCHS, Potters House, 4.5]
+                        - [Sacred Heart, Potters House, 4.5]
+            children: *alternatives
+        Costs: 
+            preferences:
+                Dad:
+                    pairwise:
+                        - [GRCHS, Sacred Heart, 3]
+                        - [GRCHS, Potters House, 4.5]
+                        - [Sacred Heart, Potters House, 4.5]
+                Mom:
+                    pairwise:
+                        - [GRCHS, Sacred Heart, 4.5]
+                        - [GRCHS, Potters House, 4.5]
+                        - [Sacred Heart, Potters House, 4.5]
+                Isaac:
+                    pairwise:
+                        - [GRCHS, Sacred Heart, 4.5]
+                        - [GRCHS, Potters House, 4.5]
+                        - [Sacred Heart, Potters House, 4.5]
+            children: *alternatives
